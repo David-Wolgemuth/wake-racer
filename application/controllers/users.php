@@ -7,12 +7,16 @@ class Users extends CI_Controller
         parent::__construct();
         $this->load->model('User');  // Automatically load User, so we don't need to in every method
     }
+    public function new_user()
+    {
+        // $this->load->view('')  Some view that includes 'partials/register'
+    }
     public function create()
     {
         $validation_rules = array(
             "name_first" => array("Name", "trim|required|alpha"),
             "name_last" => array("Name", "trim|required|alpha"),
-            "email" => array("Email", "trim|required|valid_email|is_unique[users.email]"),
+            "email" => array("Email", "trim|required|strtolower|valid_email|is_unique[users.email]"),
             "password" => array("Password", "required"),  // Assuming we don't need a minimum length
             "confirm_password" => array("Password", "required|matches[password]")
         );
