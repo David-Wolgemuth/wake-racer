@@ -12,6 +12,13 @@
     <p class="error"><?= $this->session->flashdata('email-error') ?></p>
     <input type="text" name="email" placeholder="george@washington.com" value="<?= $this->session->flashdata('email-old') ?>">
 
+
+    <!-- I think these are extrlmly important for querying later -->
+    <!-- boat type : Canoe or Kayak -->
+    <!-- Gender -->
+    <!-- Birthdate -->
+    <!-- city and state -->
+
     <label for="password">Password:</label>
     <p class="error"><?= $this->session->flashdata('password-error') ?></p>
     <input type="password" name="password" placeholder="Password" value="<?= $this->session->flashdata('password-old') ?>">
