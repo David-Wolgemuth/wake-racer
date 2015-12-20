@@ -23,6 +23,8 @@
     <p class="error"><?= $this->session->flashdata('state-error') ?></p>
     <input type="text" name="state" value="<?= $this->session->flashdata('state-old') ?>" placeholder="State">
     <!-- We could later on use make a "select" for states -->
+    <!-- or we coul try to use a google maps api to validate???? -->
+    
 
     <label for="city">City</label>
     <p class="error"><?= $this->session->flashdata('city-error') ?></p>

@@ -19,7 +19,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#login" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -28,12 +28,12 @@
       <a class="navbar-brand" href="#">WakeRacer</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="login">
-     
-      
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Post<span class="sr-only">(current)</span></a></li>
         <li><a href="#">Ranks</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Info<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -44,19 +44,6 @@
           </ul>
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-     <!-- loging area below -->
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" placeholder="Email" class="form-control">
-        </div>
-        <div class="form-group">
-          <input type="password" placeholder="Password" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-success">Sign in</button>
-      </form>
-      <!-- login area above -->
-      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -64,16 +51,19 @@
 
 
 
+<?php $this->load->view('partials/registration-form'); ?>
 
 
-<!-- example boot strap below -->
-<!--           <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
- -->
+<!-- footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <a class="navbar-brand" href="#">WakeRacer</a>
+  </div>
+</nav>
+<!-- end of footer -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="<?php echo base_url('assets/js/bootstrap.min.js')?>"></script>
+  </body>
+</html>
