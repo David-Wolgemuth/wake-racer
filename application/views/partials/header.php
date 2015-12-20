@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,6 +47,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
      <!-- loging area below -->
+     <?php if($this->session->userdata('is_logged_in'== FALSE)){ ?>
+            
       <form class="navbar-form navbar-right">
         <div class="form-group">
           <input type="text" placeholder="Email" class="form-control">
@@ -56,6 +59,7 @@
         <button type="submit" class="btn btn-success">Sign in</button>
       </form>
       <!-- login area above -->
+     <?php } ?>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
