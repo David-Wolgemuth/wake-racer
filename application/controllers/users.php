@@ -9,7 +9,7 @@ class Users extends CI_Controller
     }
     public function new_user()
     {
-        // $this->load->view('')  Some view that includes 'partials/register'
+        $this->load->view('sign-up-page');
     }
     public function create()
     {

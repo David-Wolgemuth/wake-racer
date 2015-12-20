@@ -2,8 +2,5 @@
 
 class BaseControllers extends CI_Controller 
 {
-    public function index()
-    {
-        $this->load->view('base_view');
-    }
+    // I am just an example controller for you to use as a template
 }
