@@ -33,8 +33,8 @@
      
       
       <ul class="nav navbar-nav">
-        <?php if(isset($this->session->userdata['is_logged_in'])){ ?>
-          <li class="active"><a href="#">Post<span class="sr-only">(current)</span></a></li>
+        <?php if(!isset($this->session->userdata['is_logged_in'])){ ?>
+          <li class="active"><a href="#" data-toggle="modal" data-target="#post">Post<span class="sr-only">(current)</span></a></li>
         <?php } ?>
         <li><a href="#">Ranks</a></li>
         <?php if(isset($this->session->userdata['is_logged_in'])){ ?>
@@ -75,14 +75,68 @@
 
 
 
-<!-- example boot strap below -->
-<!--           <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#post">
+  Launch demo modal
+</button>
  -->
+<!-- Modal -->
+<div class="modal fade" id="post" tabindex="-1" role="dialog" aria-labelledby="postLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="postLabel">Add new record</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <!-- distance -->
+          <div class="form-group">
+            <label>Distance</label>
+            <select  name="distance" class="form-control">
+              <option value="200m">200m</option>
+              <option value="500m">500m</option>
+              <option value="1000m">1000m</option>
+              <option value="5000m">5000m</option>
+            </select>
+          </div>
+          <!-- time -->
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>Hours</label>
+                <input type="text" name="hours" class="form-control" placeholder="Hours">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>Mins</label>
+                <input type="text" name="hours" class="form-control" placeholder="Mins">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>Seconds</label>
+                <input type="text" name="hours" class="form-control" placeholder="Seconds">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>Mili Seconds</label>
+                <input type="text" name="hours" class="form-control" placeholder="Mili Seconds">
+              </div>
+            </div>
+          </div>
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
