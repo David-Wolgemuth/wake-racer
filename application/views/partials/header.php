@@ -30,8 +30,6 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="login">
-     
-      
       <ul class="nav navbar-nav">
         <?php if(!isset($this->session->userdata['is_logged_in'])){ ?>
           <li class="active"><a href="#" data-toggle="modal" data-target="#post">Post<span class="sr-only">(current)</span></a></li>
@@ -68,12 +66,11 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
 <!-- end of nav bar top -->
-<!-- modals below -->
-<?php $this->load->view('partials/new-record');
-$this->load->view('partials/modal-registration');
 
+<!-- modals below -->
+<?php $this->load->view('partials/modal-new-record');
+$this->load->view('partials/modal-registration');
  ?>
 
 

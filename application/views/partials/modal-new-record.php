@@ -8,7 +8,7 @@
         <h4 class="modal-title" id="postLabel">Add new record</h4>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="<?= base_url("records/create") ?>" method="POST">
           <!-- distance -->
           <div class="form-group">
             <label>Distance</label>
