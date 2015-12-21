@@ -72,7 +72,7 @@
             </div>
           </div>
           <!-- weather -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="checkbox">
                   <label class="col-md-2 col-md-offset-1"><input  type="checkbox" value="Sun">Sun</label>
                   <label class="col-md-2"><input type="checkbox" value="Rain">Rain</label>
@@ -80,7 +80,7 @@
                   <label class="col-md-2"><input type="checkbox" value="Snow">Snow</label>
                   <label class="col-md-2"><input type="checkbox" value="Hail">Hail</label>
             </div>
-          </div>
+          </div> -->
             <div class="form-group">
               <label>Date:</label>
               <input type="date" name="date" class="form-control">

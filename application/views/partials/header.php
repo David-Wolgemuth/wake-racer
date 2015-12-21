@@ -35,33 +35,14 @@
           <li class="active"><a href="#" data-toggle="modal" data-target="#post">Post<span class="sr-only">(current)</span></a></li>
         <?php } ?>
         <li><a href="#">Ranks</a></li>
-        <?php if(isset($this->session->userdata['is_logged_in'])){ ?>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Info<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Account</a></li>
-              <li><a href="#">Log Out</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </li>
-          <?php } ?>
+          <?php if(!isset($this->session->userdata['is_logged_in'])){ 
+               $this->load->view('partials/modal-account-info');
+               } ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-     <!-- loging area below -->
-     <?php if(!isset($this->session->userdata['is_logged_in'])){ ?>      
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" placeholder="Email" class="form-control">
-        </div>
-        <div class="form-group">
-          <input type="password" placeholder="Password" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-success">Sign in</button>
-        <a href="/user/new" data-toggle="modal" data-target="#register"><button class="btn btn-info">Register</button></a>
-      </form>
-      <!-- login area above -->
-     <?php } ?>
+       <?php if(!isset($this->session->userdata['is_logged_in'])){ 
+              $this->load->view('partials/modal-login-form');
+              } ?>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

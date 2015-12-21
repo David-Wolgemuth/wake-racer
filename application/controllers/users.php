@@ -19,6 +19,9 @@ class Users extends CI_Controller
             "email" => array("Email", "trim|required|strtolower|valid_email|is_unique[users.email]"),
             "password" => array("Password", "required"),  // Assuming we don't need a minimum length
             "confirm_password" => array("Password", "required|matches[password]")
+            // gender
+            // birthdate
+            // 
         );
         foreach ($rules as $key => $value) {
             $this->form_validation->set_rules($key, $value[0], $value[1]);
