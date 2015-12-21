@@ -1,5 +1,15 @@
-<!-- load form using:  $this->load->view('partials/registration-form'); -->
-<div class="row">
+<!-- load form using:  $this->load->view('partials/modal-registration'); -->
+
+<div class="modal fade" id="register" tabindex="-2" role="dialog" aria-labelledby="register">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="registration">Register</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
     <div class=" col-sm-10 col-sm-offset-1">
         <form action="<?= base_url("users/create") ?>" method="POST">
             <div class="col-sm-6 col-md-6">
@@ -70,4 +80,13 @@
         </form>
     </div>
     
+</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">registration</button>
+      </div>
+    </div>
+  </div>
 </div>

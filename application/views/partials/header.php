@@ -60,83 +60,21 @@
           <input type="password" placeholder="Password" class="form-control">
         </div>
         <button type="submit" class="btn btn-success">Sign in</button>
-        <a href="/user/new"><button class="btn btn-info ">Register</button></a>
+        <a href="/user/new" data-toggle="modal" data-target="#register"><button class="btn btn-info">Register</button></a>
       </form>
-
       <!-- login area above -->
      <?php } ?>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
 <!-- end of nav bar top -->
+<!-- modals below -->
+<?php $this->load->view('partials/new-record');
+$this->load->view('partials/modal-registration');
+
+ ?>
 
 
-
-
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#post">
-  Launch demo modal
-</button>
- -->
-<!-- Modal -->
-<div class="modal fade" id="post" tabindex="-1" role="dialog" aria-labelledby="postLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="postLabel">Add new record</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-          <!-- distance -->
-          <div class="form-group">
-            <label>Distance</label>
-            <select  name="distance" class="form-control">
-              <option value="200m">200m</option>
-              <option value="500m">500m</option>
-              <option value="1000m">1000m</option>
-              <option value="5000m">5000m</option>
-            </select>
-          </div>
-          <!-- time -->
-          <div class="row">
-            <div class="col-md-3">
-              <div class="form-group">
-                <label>Hours</label>
-                <input type="text" name="hours" class="form-control" placeholder="Hours">
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="form-group">
-                <label>Mins</label>
-                <input type="text" name="hours" class="form-control" placeholder="Mins">
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="form-group">
-                <label>Seconds</label>
-                <input type="text" name="hours" class="form-control" placeholder="Seconds">
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="form-group">
-                <label>Mili Seconds</label>
-                <input type="text" name="hours" class="form-control" placeholder="Mili Seconds">
-              </div>
-            </div>
-          </div>
-
-
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
