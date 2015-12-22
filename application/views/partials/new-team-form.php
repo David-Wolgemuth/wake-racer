@@ -11,7 +11,7 @@
 
         <div class="row">
     <div class=" col-sm-10 col-sm-offset-1">
-        <form action="<?= base_url("users/create") ?>" method="POST">
+        <form action="<?= base_url("teams/create") ?>" method="POST">
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
                     <label for="team_name"></label>

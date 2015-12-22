@@ -1,12 +1,12 @@
 <?php
 
-class Record extends CI_Model
+class Team extends CI_Model
 {
     public function get_last_created_team()
     {
         $query =   "SELECT * FROM teams
                     WHERE id=LAST_INSERT_ID();  ";
-        return $this->db->query($query);
+        return $this->db->query($query)->row_array();
     }
     public function create_team($team)
     {
@@ -14,7 +14,7 @@ class Record extends CI_Model
                     (team_name, city, state, created_at, updated_at)
                     VALUES
                     (?, ?, ?, NOW(), NOW() );  ";
-        $values = array($team['team_name'], $team['city'], $team['states'] );
+        $values = array($team['team_name'], $team['city'], $team['state'] );
         $this->db->query($query, $values);
         if (!$this->db->affected_rows()) {
             die("Database Error");
