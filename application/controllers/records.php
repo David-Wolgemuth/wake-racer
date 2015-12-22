@@ -9,10 +9,14 @@ class Records extends CI_Controller
     }
     public function new_record()
     {
+        // do we need this anymore?
         $this->load->view('make-new-record');
     }
     public function create()
     {
+        $record_post = $this->input->post();
+        var_dump($record_post);
+        die();
         $validation_rules = array(
             "distance" => array("Distance", "required"),
             "record_time" => array("Time", "required"),

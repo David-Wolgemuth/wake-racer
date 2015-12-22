@@ -31,7 +31,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="login">
       <ul class="nav navbar-nav">
-        <?php if(!isset($this->session->userdata['user_id'])){ ?>
+        <?php if(isset($this->session->userdata['user_id'])){ ?>
           <li class="active"><a href="#" data-toggle="modal" data-target="#post">Post<span class="sr-only">(current)</span></a></li>
         <?php } ?>
         <li><a href="#">Ranks</a></li>
