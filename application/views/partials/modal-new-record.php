@@ -52,8 +52,8 @@
           <label>Boat Type</label>
           <select name="boat_type" class="form-control">
             <option disabled selected>Boat class</option>
-            <option vlaue="canoe">Canoe</option>
-            <option vlaue="kayak">Kayak</option>
+            <option value="canoe">Canoe</option>
+            <option value="kayak">Kayak</option>
           </select>
         </div>
         <!-- location -->
