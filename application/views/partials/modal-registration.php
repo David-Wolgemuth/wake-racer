@@ -43,13 +43,13 @@
                 <div class="form-group">
                     <label for="gender">Gender</label>
                     <p class="error"><?= $this->session->flashdata('gender-error') ?></p>
-                    <select  class="form-control">
+                    <select name="gender" class="form-control">
                         <option class="form-control" disabled selected>Gender</option>
-                        <option class="form-control" value="male">Male</option>
-                        <option class="form-control" value="female">Female</option>
+                        <option class="form-control" value="1">Male</option>
+                        <option class="form-control" value="0">Female</option>
                     </select>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="boat_type">Boat Type</label>
                     <p class="error"><?= $this->session->flashdata('boat_type-error') ?></p>
                     <select  class="form-control">
@@ -57,13 +57,13 @@
                         <option value="canoe">Canoe</option>
                         <option value="kayak">Kayak</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label>Birth date</label>
                     <p class="error"><?= $this->session->flashdata('birthdate_type-error') ?></p>
-                    <input type="date" class="form-control" name="birthday"  placeholder="Birth day">
+                    <input type="date" class="form-control" name="birthdate"  placeholder="Birth day">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>State</label>
                     <p class="error"><?= $this->session->flashdata('state-error') ?></p>
                     <input type="text" name="state" class="form-control" placeholder="State">
@@ -72,7 +72,7 @@
                     <label>City</label>
                     <p class="error"><?= $this->session->flashdata('city-error') ?></p>
                     <input type="text" name="city" class="form-control" placeholder="City">
-                </div>
+                </div> -->
             </div><!-- end of right side -->
             <div class="form-group">
                 <input class="btn btn-success form-control" type="submit" value="Register">

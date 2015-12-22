@@ -20,14 +20,14 @@ class User extends CI_Model
     public function create($user)
     {
         $query =   "INSERT INTO users
-                    (name_first, name_last, email, password,
+                    (name_first, name_last, email, password, gender, birthdate, 
                         salt, created_at, updated_at)
                     VALUES
-                    (?, ?, ?, MD5(CONCAT(?, ?)), ?, NOW(), NOW());  ";
+                    (?, ?, ?, ?, ?, MD5(CONCAT(?, ?)), ?, NOW(), NOW());  ";
         $salt = bin2hex(openssl_random_pseudo_bytes(22));
 
         $values = array($user['name_first'], $user['name_last'], $user['email'],
-            $user['password'], $salt, $salt);
+            $user['gender'], $user['birthdate'], $user['password'], $salt, $salt);
         
         $this->db->query($query, $values);
         if (!$this->db->affected_rows()) {
