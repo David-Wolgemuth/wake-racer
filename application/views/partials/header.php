@@ -35,11 +35,11 @@
           <li class="active"><a href="#" data-toggle="modal" data-target="#post">Post<span class="sr-only">(current)</span></a></li>
         <?php } ?>
         <li><a href="#">Ranks</a></li>
-          <?php if(!isset($this->session->userdata['user_id'])){ 
-               $this->load->view('partials/modal-account-info');
-               } ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+          <?php if(isset($this->session->userdata['user_id'])){ 
+               $this->load->view('partials/modal-account-info');
+               } ?>
        <?php if(!isset($this->session->userdata['user_id'])){ 
               $this->load->view('partials/modal-login-form');
               } ?>

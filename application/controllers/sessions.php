@@ -19,4 +19,11 @@ class Sessions extends CI_Controller
 		}
 		redirect(base_url());  // Where should we redirect?
 	}
+	public function destroy()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url('/'));
+		//redirect to all records page maybe??
+	}
+
 }
