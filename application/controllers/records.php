@@ -22,6 +22,7 @@ class Records extends CI_Controller
         $record_state = $record_post['state'];
         $record_city = $record_post['city'];
         $record_date = $record_post['date'];
+
         $record_post = array('distance'=>$record_distance,
                            'record_time'=>$record_time,
                            'date'=>$record_date,
@@ -38,14 +39,17 @@ class Records extends CI_Controller
             "state" => array("State", "required"),
             "city" => array("City", "required"),
             );
+        $this->load->library('form_validation');
         foreach ($validation_rules as $key => $value) {
             $this->form_validation->set_rules($key, $value[0], $value[1]);
         }
         if ($this->form_validation->run()) {
+
             // Saved to record if we want to use this data to log in the record
             $record = $this->Record->create($record_post);
             $this->session->set_flashdata('message', 'Record Successfully Created');
         } else {
+
             foreach ($validation_rules as $key => $value) {  // So we can place each error exactly where we want to in the view
                 $this->session->set_flashdata($key . '-error', form_error($key));  // Example $this->session->flashdata('name_first-error');
                 $this->session->set_flashdata($key . '-old', $this->input->post($key));  // Example $this->session->flashdata('name_first-old');

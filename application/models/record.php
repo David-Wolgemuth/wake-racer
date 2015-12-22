@@ -12,7 +12,7 @@ class Record extends CI_Model
     {
         $query =   "INSERT INTO records
                     (
-                        distance, record_time, record_date, boat_type, 
+                        distance, time, record_date, boat_type, 
                         state, city, user_id, created_at, updated_at
                     )
                     VALUES
@@ -22,7 +22,7 @@ class Record extends CI_Model
                     );  ";
         $values = array(
             $record_post['distance'], $record_post['record_time'], $record_post['date'], 
-            $record_post['boat_type'], $record_post['state'], $record_post['city'], $this->session->userdata['id']
+            $record_post['boat_type'], $record_post['state'], $record_post['city'], $this->session->userdata['user_id']
             );
         var_dump($this->db->query($query, $values));
         die();
