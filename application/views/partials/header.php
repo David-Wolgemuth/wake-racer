@@ -31,16 +31,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="login">
       <ul class="nav navbar-nav">
-        <?php if(!isset($this->session->userdata['is_logged_in'])){ ?>
+        <?php if(!isset($this->session->userdata['user_id'])){ ?>
           <li class="active"><a href="#" data-toggle="modal" data-target="#post">Post<span class="sr-only">(current)</span></a></li>
         <?php } ?>
         <li><a href="#">Ranks</a></li>
-          <?php if(!isset($this->session->userdata['is_logged_in'])){ 
+          <?php if(!isset($this->session->userdata['user_id'])){ 
                $this->load->view('partials/modal-account-info');
                } ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-       <?php if(!isset($this->session->userdata['is_logged_in'])){ 
+       <?php if(!isset($this->session->userdata['user_id'])){ 
               $this->load->view('partials/modal-login-form');
               } ?>
       </ul>
