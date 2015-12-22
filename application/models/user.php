@@ -10,7 +10,8 @@ class User extends CI_Model
     }
     public function login_user($user)
     {
-        $query =   "SELECT id, admin FROM users
+        $query =   "SELECT id AS user_id, name_first, name_last, CONCAT(name_first, ' ', name_last) AS name_full
+                        FROM users
                     WHERE email=?
                     AND password=MD5(CONCAT(?, salt));  ";
 
@@ -20,7 +21,7 @@ class User extends CI_Model
     public function create($user)
     {
         $query =   "INSERT INTO users
-                    (name_first, name_last, email, password, gender, birthdate, 
+                    (name_first, name_last, email, gender, birthdate, password,  
                         salt, created_at, updated_at)
                     VALUES
                     (?, ?, ?, ?, ?, MD5(CONCAT(?, ?)), ?, NOW(), NOW());  ";

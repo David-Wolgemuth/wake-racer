@@ -20,8 +20,6 @@ class Records extends CI_Controller
             "boat_type" => array("Boat Type", "required"),
             "state" => array("State", "required"),
             "city" => array("City", "required"),
-            
-
             );
         foreach ($rules as $key => $value) {
             $this->form_validation->set_rules($key, $value[0], $value[1]);
