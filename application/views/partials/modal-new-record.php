@@ -24,25 +24,25 @@
           <div class="col-md-3">
             <div class="form-group">
               <label>Hours</label>
-              <input type="text" name="hours" class="form-control" placeholder="Hours">
+              <input type="number" min="0" max="99" name="hours" class="form-control" value="0" placeholder="Hours">
             </div>
           </div>
           <div class="col-md-3">
             <div class="form-group">
               <label>Mins</label>
-              <input type="text" name="mins" class="form-control" placeholder="Mins">
+              <input type="number" min="0" max="59" name="mins" class="form-control" value="0" placeholder="Mins">
             </div>
           </div>
           <div class="col-md-3">
             <div class="form-group">
               <label>Seconds</label>
-              <input type="text" name="seconds" class="form-control" placeholder="Seconds">
+              <input type="number" min="0" max="59" name="seconds" class="form-control" value="0" placeholder="Seconds">
             </div>
           </div>
           <div class="col-md-3">
             <div class="form-group">
               <label>Mili Seconds</label>
-              <input type="text" name="mili" class="form-control" placeholder="Mili Seconds">
+              <input type="number" min="0" max="99" name="mili" class="form-control" value="0" placeholder="Mili Seconds">
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@
           </div> -->
         <div class="form-group">
           <label>Date:</label>
-          <input type="date" name="date" class="form-control">
+          <input type="date" name="record_date" class="form-control">
         </div>
       </div>
       <div class="modal-footer">

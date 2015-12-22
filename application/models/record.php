@@ -8,11 +8,11 @@ class Record extends CI_Model
                     WHERE id=LAST_INSERT_ID();  ";
         return $this->db->query($query);
     }
-    public function create($record_post)
+    public function create($record, $user_id)
     {
         $query =   "INSERT INTO records
                     (
-                        distance, time, record_date, boat_type, 
+                        distance, record_time, record_date, boat_type, 
                         state, city, user_id, created_at, updated_at
                     )
                     VALUES
@@ -20,12 +20,19 @@ class Record extends CI_Model
                         ?, ?, ?, ?, 
                         ?, ?, ?, NOW(), NOW() 
                     );  ";
+
+        // Convert everything into seconds, then save it as seconds.
+        $hours = 3600 * $record['hours'];
+        $minutes = 60 * $record['mins'];
+        $seconds = $record['seconds'];
+        $mil_seconds = 0.01 * $record['mili'];
+        $record_time = $hours + $minutes + $seconds + $mil_seconds;
+
         $values = array(
-            $record_post['distance'], $record_post['record_time'], $record_post['date'], 
-            $record_post['boat_type'], $record_post['state'], $record_post['city'], $this->session->userdata['user_id']
+            $record['distance'], $record_time, $record['record_date'], 
+            $record['boat_type'], $record['state'], $record['city'], $user_id
             );
-        var_dump($this->db->query($query, $values));
-        die();
+        $this->db->query($query, $values);
         if (!$this->db->affected_rows()) {
             die("Database Error - Record Not Created");
         } else {
