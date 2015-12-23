@@ -31,6 +31,7 @@ class Users extends CI_Controller
             $this->session->set_flashdata('message', 'User Successfully Created');
         } else {
             foreach ($rules as $key => $value) {  // So we can place each error exactly where we want to in the view
+                $this->session->set_flashdata('register-error','OOPS seems like your registration dident go as hoped!');
                 $this->session->set_flashdata($key . '-error', form_error($key));  // Example $this->session->flashdata('name_first-error');
                 $this->session->set_flashdata($key . '-old', $this->input->post($key));  // Example $this->session->flashdata('name_first-old');
             }

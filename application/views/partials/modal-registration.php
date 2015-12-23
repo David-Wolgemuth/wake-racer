@@ -15,17 +15,31 @@
             <div class="col-sm-12">
                 <div class="form-group">
                     <label for="name">First Name:</label>
-                    <p class="error"><?= $this->session->flashdata('name_first-error') ?></p>
-                    <input  class="form-control" type="text" name="name_first" placeholder="George" value="<?= $this->session->flashdata('name_first-old') ?>">
+                    <?php if( $this->session->flashdata('name_first-error')){?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= $this->session->flashdata('name_first-error')?>
+                        </div>
+                   <?php } ?>
+                    <input  class="form-control" type="text" name="name_first-error" placeholder="George" value="<?= $this->session->flashdata('name_first-old') ?>">
                 </div>
+
                 <div class="form-group">
                     <label for="name">Last Name:</label>
-                    <p class="error"><?= $this->session->flashdata('name_last-error') ?></p>
+                    <?php if( $this->session->flashdata('name_last-error')){?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= $this->session->flashdata('name_last-error')?>
+                        </div>
+                   <?php } ?>
                     <input class="form-control" type="text" name="name_last" placeholder="Washington" value="<?= $this->session->flashdata('name_last-old') ?>">
                 </div>
+
                 <div class="form-group">
                     <label for="gender">Gender</label>
-                    <p class="error"><?= $this->session->flashdata('gender-error') ?></p>
+                    <?php if( $this->session->flashdata('gender-error')){?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= $this->session->flashdata('gender-error')?>
+                        </div>
+                   <?php } ?>
                     <select name="gender" class="form-control">
                         <option class="form-control" disabled selected>Gender</option>
                         <option class="form-control" value="1">Male</option>
@@ -35,22 +49,38 @@
                 
                 <div class="form-group">
                     <label>Birth date</label>
-                    <p class="error"><?= $this->session->flashdata('birthdate_type-error') ?></p>
+                    <?php if( $this->session->flashdata('birthdate-error')){?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= $this->session->flashdata('birthdate-error')?>
+                        </div>
+                   <?php } ?>
                     <input type="date" class="form-control" name="birthdate"  placeholder="Birth day">
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <p class="error"><?= $this->session->flashdata('email-error') ?></p>
+                    <?php if( $this->session->flashdata('email-error')){?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= $this->session->flashdata('email-error')?>
+                        </div>
+                   <?php } ?>
                     <input class="form-control" type="text" name="email" placeholder="george@washington.com" value="<?= $this->session->flashdata('email-old') ?>">
                 </div>
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <p class="error"><?= $this->session->flashdata('password-error') ?></p>
+                    <?php if( $this->session->flashdata('password-error')){?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= $this->session->flashdata('password-error')?>
+                        </div>
+                   <?php } ?>
                     <input  class="form-control" type="password" name="password" placeholder="Password" value="<?= $this->session->flashdata('password-old') ?>">
                 </div>
                 <div class="form-group">
                     <label for="confirm_password">Confirm Password</label>
-                    <p class="error"><?= $this->session->flashdata('confirm_password-error') ?></p>
+                    <?php if( $this->session->flashdata('confirm_password-error')){?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= $this->session->flashdata('confirm_password-error')?>
+                        </div>
+                   <?php } ?>
                     <input  class="form-control" type="password" name="confirm_password" placeholder="Confirm Password" value="<?= $this->session->flashdata('confirm_password-old') ?>">
                 </div>
             
@@ -65,10 +95,10 @@
 </div>
 
       </div>
-      <div class="modal-footer">
+      <!-- <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">registration</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

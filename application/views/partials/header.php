@@ -49,6 +49,27 @@
 </nav>
 <!-- end of nav bar top -->
 
+<!-- alert message if failed login -->
+<?php
+if($this->session->flashdata('login-error')){ ?>
+  <div class="alert alert-danger" role="alert"><?php echo $this->session->flashdata('login-error');?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+     </button> </div>
+ <?php };
+?>
+<!-- alert message if failed register -->
+<?php
+if($this->session->flashdata('register-error')){ ?>
+  <div class="alert alert-danger" role="alert"><?php echo $this->session->flashdata('register-error');?>
+    <a href="/user/new" data-toggle="modal" data-target="#register" class="alert-link">Try Again?</a>
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+     </button>        
+  </div>
+ <?php };
+?>
+
 <!-- modals below -->
 <?php $this->load->view('partials/modal-new-record');
 $this->load->view('partials/modal-registration');

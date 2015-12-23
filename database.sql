@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.7.9, for osx10.9 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `wake-racer` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `Wake-racer`;
+-- MySQL dump 10.13  Distrib 5.6.19, for osx10.7 (i386)
 --
 -- Host: 127.0.0.1    Database: Wake-racer
 -- ------------------------------------------------------
--- Server version	5.5.42
+-- Server version	5.5.38
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -65,7 +67,7 @@ CREATE TABLE `records` (
   PRIMARY KEY (`id`),
   KEY `fk_records_users_idx` (`user_id`),
   CONSTRAINT `fk_records_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +76,7 @@ CREATE TABLE `records` (
 
 LOCK TABLES `records` WRITE;
 /*!40000 ALTER TABLE `records` DISABLE KEYS */;
-INSERT INTO `records` VALUES (2,1,'200m','2015-12-22',24,'canoe','Lanc','pa','2015-12-22 16:13:55','2015-12-22 16:13:55'),(3,1,'200m','2015-12-23',1945,'kayak','Lancaster','CA','2015-12-22 16:14:51','2015-12-22 16:14:51');
+INSERT INTO `records` VALUES (2,1,'200m','2015-12-22',24,'canoe','Lanc','pa','2015-12-22 16:13:55','2015-12-22 16:13:55'),(3,1,'200m','2015-12-23',1945,'kayak','Lancaster','CA','2015-12-22 16:14:51','2015-12-22 16:14:51'),(6,2,'500m','2015-12-23',140,'kayak','Gig Harbor','Wa','2015-12-23 10:47:47','2015-12-23 10:47:47'),(7,2,'500m','2015-12-23',150,'kayak','Gig Harbor','wa','2015-12-23 10:53:20','2015-12-23 10:53:20');
 /*!40000 ALTER TABLE `records` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +126,7 @@ CREATE TABLE `users` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,13 +135,9 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'james','brown','james@brown.com','e3de53c96d2717ff75206fded1f79e70','74db5aeee7998410b805544981d238f17f3587e79823','1970-10-23',1,'2015-12-22 15:58:54','2015-12-22 15:58:54');
+INSERT INTO `users` VALUES (1,'james','brown','james@brown.com','e3de53c96d2717ff75206fded1f79e70','74db5aeee7998410b805544981d238f17f3587e79823','1970-10-23',1,'2015-12-22 15:58:54','2015-12-22 15:58:54'),(2,'scott','puckett','spuckett253@gmail.com','291b3d2d2714c37a889d1f552055b866','84770333fd4095fb40a6469aad218d7c9e2735f0dc73','1991-03-08',1,'2015-12-23 10:47:13','2015-12-23 10:47:13');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'Wake-racer'
---
 
 --
 -- Dumping routines for database 'Wake-racer'
@@ -154,4 +152,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-12-22 16:16:33
+-- Dump completed on 2015-12-23 14:06:21
