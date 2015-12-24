@@ -20,10 +20,10 @@
 					<?php foreach ($records as $key => $value) { ?>
 						<tr>
 							<td>Rank</td>
-							<td><?php echo $value['name_first']. " " . $value['name_last'] ?></td>
-							<td><?php $value['birthdate'] ?></td>
-							<td><?php echo $value['record_time'] ?></td>
-							<td><?php echo $value['distance'] ?></td>
+							<td><?= $value['name_first']. " " . $value['name_last'] ?></td>
+							<td><?= $value['birthdate'] ?></td>
+							<td><?= $value['record_time']['formatted'] ?></td>
+							<td><?= $value['distance'] ?></td>
 							<td><?php if($value['gender']==0){
 								echo "Female";
 								}

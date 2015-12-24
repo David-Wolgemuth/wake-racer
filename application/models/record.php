@@ -18,16 +18,24 @@ class Record extends CI_Model
     }
     public function expand_seconds($seconds)
     {
+        $seconds_const = $seconds;
         $time = array('hours' => 0, 'minutes' => 0, 'seconds' => 0);
-        while ($seconds - 3600) {
+        while ($seconds - 3600 >= 0) {
             $seconds -= 3600;
             $time['hours']++;
         }
-        while ($seconds - 60) {
+        while ($seconds - 60 >= 0) {
             $seconds -= 60;
             $time['minutes']++;
         }
         $time['seconds'] = $seconds;
+        if ($time['hours']) {
+            $time['formatted'] = gmdate("H:i:s", $seconds_const);
+        } elseif ($time['minutes']) {
+            $time['formatted'] = gmdate("i:s", $seconds_const);
+        } else {
+            $time['formatted'] = $seconds_const;
+        }
         return $time;
     }
     public function create($record, $user_id)
