@@ -20,7 +20,7 @@
                             <?= $this->session->flashdata('name_first-error')?>
                         </div>
                    <?php } ?>
-                    <input  class="form-control" type="text" name="name_first-error" placeholder="George" value="<?= $this->session->flashdata('name_first-old') ?>">
+                    <input  class="form-control" type="text" name="name_first" placeholder="George" value="<?= $this->session->flashdata('name_first-old') ?>">
                 </div>
 
                 <div class="form-group">

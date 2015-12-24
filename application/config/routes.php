@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$route['default_controller'] = 'users/new_user';
+$route['default_controller'] = 'records';
 
 $route['destroy'] = 'sessions/destroy';
 

@@ -7,11 +7,13 @@ class Records extends CI_Controller
         parent::__construct();
         $this->load->model('Record');
     }
-    public function new_record()
+    public function index()
     {
-        // do we need this anymore?
-        $this->load->view('make-new-record');
-    }
+        $records = $this->Record->get_all_records();
+        $this->load->view('records_all', array('records'=>$records));
+    }   
+    
+
     public function create()
     {
         $rules = array(
@@ -40,4 +42,6 @@ class Records extends CI_Controller
         }
         redirect(base_url());
     }
+
+
 }

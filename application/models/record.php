@@ -4,11 +4,12 @@ class Record extends CI_Model
 {
     public function get_all_records()
     {
-        $query =   "SELECT records.*, name_first, name_last FROM records
+        $query =   "SELECT records.*, name_first, name_last, gender, birthdate FROM records
                     JOIN users ON users.id=user_id
-                    ORDER BY records.created_at;  ";
+                    ORDER BY records.created_at DESC;  ";
         return $this->db->query($query)->result_array();
     }
+    
     public function get_last_created_record()
     {
         $query =   "SELECT * FROM records

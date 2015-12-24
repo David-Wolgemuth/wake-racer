@@ -9,13 +9,13 @@ class Users extends CI_Controller
     }
     public function new_user()
     {
-        $this->load->view('sign-up-page');
+        $this->load->view('records_all');
     }
     public function create()
     {
         $rules = array(
-            "name_first" => array("Name", "trim|required|alpha"),
-            "name_last" => array("Name", "trim|required|alpha"),
+            "name_first" => array("First Name", "trim|required|alpha"),
+            "name_last" => array("Last Name", "trim|required|alpha"),
             "email" => array("Email", "trim|required|strtolower|valid_email|is_unique[users.email]"),
             "password" => array("Password", "required"),  // Assuming we don't need a minimum length
             "confirm_password" => array("Password", "required|matches[password]"),
