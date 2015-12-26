@@ -38,4 +38,9 @@ class User extends CI_Model
             return $this->get_last_created_user();
         }
     }
+
+    public function age()
+    {
+        
+    }
 }

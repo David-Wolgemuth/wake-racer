@@ -13,6 +13,7 @@ class Records extends CI_Controller
         for ($i=0; $i < count($records); $i++) { 
             $records[$i]['record_time'] = $this->Record->expand_seconds($records[$i]['record_time']);
         }
+        
         $this->load->view('records_all', array('records'=>$records));
     }   
     
