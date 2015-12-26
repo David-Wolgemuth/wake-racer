@@ -1,5 +1,6 @@
 <?php $this->load->view('partials/header'); ?>
 
+
 <div class="container">
 	<h1 class="page-header text-center">Records</h1>
 	<div class="row">

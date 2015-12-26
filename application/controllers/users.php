@@ -12,7 +12,8 @@ class Users extends CI_Controller
     {
         $user_records = $this->Record->get_user_records();
 
-        $this->load->view('user',array('records'=>$user_records));
+        $pageTitle = $this->session->userdata('name_first');
+        $this->load->view('user',array('records'=>$user_records, 'pageTitle'=>$pageTitle));
     }
     public function records_all()
     {

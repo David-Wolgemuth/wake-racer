@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>WakeRacer</title>
+    <title><?php echo $pageTitle ?></title>
 
     <!-- Bootstrap -->
     <link href="<?php echo base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
@@ -31,8 +31,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="login">
       <ul class="nav navbar-nav">
-        <li class="active" ><a href="<?php echo base_url('records')?>">Records</a></li>
-        <li ><a href="user"><?php echo ucwords($this->session->userdata('name_first')); ?></a></li>
+        <li class="<?php if($pageTitle == 'records'){echo 'active';} ?>" ><a href="<?php echo base_url('records')?>">Records</a></li>
+        <li class="<?php if($pageTitle == $this->session->userdata('name_first')){echo 'active';} ?>" ><a href="user"><?php echo ucwords($this->session->userdata('name_first')); ?></a></li>
         <?php if(isset($this->session->userdata['user_id'])){ ?>
           <li><a href="#" data-toggle="modal" data-target="#post">Post<span class="sr-only">(current)</span></a></li>
         <?php } ?>
