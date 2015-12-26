@@ -42,7 +42,7 @@
           <div class="col-md-3">
             <div class="form-group">
               <label>Mili Seconds</label>
-              <input type="number" min="0" max="99" name="mili" class="form-control" value="0" placeholder="Mili Seconds">
+              <input type="number" min="0" max="999" name="mili" class="form-control" value="0" placeholder="Mili Seconds">
             </div>
           </div>
         </div>
