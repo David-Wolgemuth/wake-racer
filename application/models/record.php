@@ -9,6 +9,18 @@ class Record extends CI_Model
                     ORDER BY records.created_at DESC;  ";
         return $this->db->query($query)->result_array();
     }
+
+    public function get_user_records()
+    {
+        $query = "SELECT * FROM records
+                    WHERE user_id = ?
+                    ORDER BY record_date DESC";
+                   
+        $values = array($this->session->userdata('user_id'));
+
+        return $this->db->query($query,$values)->result_array();
+        
+    }
     
     public function get_last_created_record()
     {

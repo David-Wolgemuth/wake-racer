@@ -6,6 +6,18 @@ class Users extends CI_Controller
     {
         parent::__construct();
         $this->load->model('User');  // Automatically load User, so we don't need to in every method
+        $this->load->model('Record');
+    }
+    public function index()
+    {
+        $user_records = $this->Record->get_user_records();
+
+        $pageTitle = $this->session->userdata('name_first');
+        $this->load->view('user',array('records'=>$user_records, 'pageTitle'=>$pageTitle));
+    }
+    public function records_all()
+    {
+        $this->load->view('records_all');
     }
     public function new_user()
     {
