@@ -2,14 +2,39 @@
 
 class Record extends CI_Model
 {
-    public function get_all_records()
+    public function get_all_records($request)
     {
         $query =   "SELECT records.*, name_first, name_last, gender, birthdate FROM records
                     JOIN users ON users.id=user_id
-                    ORDER BY records.created_at DESC;  ";
-        return $this->db->query($query)->result_array();
+                    WHERE (distance=? OR ?='')
+                    AND ? LIKE CONCAT('%', boat_type, '%')
+                    AND ? LIKE CONCAT('%', gender, '%')
+                    AND CONCAT(name_first, ' ', name_last) LIKE CONCAT('%', ?, '%')
+                    ORDER BY records.created_at DESC;";
+        $request = $this->set_empty($request);
+        $distance = $request['distance'];
+        $boat_type= implode('', $request['boat_type']);
+        $gender = implode('', $request['gender']);
+        $name = $request['name'];
+        $values = array($distance, $distance, $boat_type, $gender, $name);
+        return $this->db->query($query, $values)->result_array();
     }
-
+    public function set_empty($request)
+    {
+        if (!isset($request['distance'])) {
+            $request['distance'] = "";
+        }
+        if (!isset($request['boat_type'])) {
+            $request['boat_type'] = array();
+        }
+        if (!isset($request['gender'])) {
+            $request['gender'] = array();
+        }
+        if (!isset($request['name'])) {
+            $request['name'] = "";
+        }
+        return $request;
+    }
     public function get_user_records()
     {
         $query = "SELECT * FROM records
