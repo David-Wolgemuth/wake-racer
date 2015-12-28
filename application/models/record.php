@@ -42,9 +42,13 @@ class Record extends CI_Model
         }
         $time['seconds'] = $seconds;
         if ($time['hours']) {
-            $time['formatted'] = gmdate("H:i:s", $seconds_const) . $seconds_const - floor($seconds_const);
+            $time['formatted'] = gmdate("H:i:s", $seconds_const);
+            $dec = $seconds_const - floor($seconds_const);
+            $time['formatted'] .= substr($dec, 1, 3);
         } elseif ($time['minutes']) {
-            $time['formatted'] = gmdate("i:s", $seconds_const) . $seconds_const - floor($seconds_const);
+            $time['formatted'] = gmdate("i:s", $seconds_const);
+            $dec = $seconds_const - floor($seconds_const);
+            $time['formatted'] .= substr($dec, 1, 3);
         } else {
             $time['formatted'] = $seconds_const;
         }
