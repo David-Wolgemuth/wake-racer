@@ -5,7 +5,7 @@
 	<h1 class="page-header text-center">Records</h1>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
-			<form action="records/index" method="GET">
+			<form action="<?= base_url("records/index")?>" method="GET">
 				<div class="form-group">
 				<label>Distance</label>
 					<select  name="distance" class="form-control">
@@ -15,6 +15,19 @@
 						<option value="1000m">1000m</option>
 						<option value="5000m">5000m</option>
 					</select>
+				</div>
+				<div class="form-group">
+					<label>Boat Type</label>
+					<input type="checkbox" name="boat_type[]" value="canoe" checked>Canoe
+					<input type="checkbox" name="boat_type[]" value="kayak" checked>Kayak
+				</div>
+				<div class="form-group">
+					<label for="Gender">Gender</label>
+					<input type="checkbox" name="gender[]" value="1" checked>Male
+					<input type="checkbox" name="gender[]" value="0" checked>Female
+				</div>
+				<div class="form-group">
+					<input type="text" name="name" placeholder="George Washington">
 				</div>
 				<input class="btn btn-primary" type="submit" value="Search">
 			</form>
