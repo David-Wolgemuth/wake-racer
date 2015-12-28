@@ -9,17 +9,24 @@ class Records extends CI_Controller
     }
     public function index()
     {
-        $request = $this->input->get();
-        var_dump($request); 
-        $records = $this->Record->get_all_records($request);
+        $request = $this->input->post();
+        $records = $this->Record->get_all_records();
         for ($i=0; $i < count($records); $i++) { 
             $records[$i]['record_time'] = $this->Record->expand_seconds($records[$i]['record_time']);
         }
         $pageTitle='records';
         $this->load->view('records_all', array('records'=>$records, 'pageTitle'=>$pageTitle));
-    }   
-    
 
+    }    
+    public function index_html()
+    {
+        $request = $this->input->post();
+        $records = $this->Record->get_all_records_with_request($request);
+        for ($i=0; $i < count($records); $i++) { 
+            $records[$i]['record_time'] = $this->Record->expand_seconds($records[$i]['record_time']);
+        }
+        $this->load->view('partials/records-table', array('records'=>$records));
+    }
     public function create()
     {
         $rules = array(

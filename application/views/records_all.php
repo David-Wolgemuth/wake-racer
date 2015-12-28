@@ -5,7 +5,7 @@
 	<h1 class="page-header text-center">Records</h1>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
-			<form action="<?= base_url("records/index")?>" method="GET">
+			<form id="parameters" action="<?= base_url("records/index")?>" method="POST">
 				<div class="form-group">
 				<label>Distance</label>
 					<select  name="distance" class="form-control">
@@ -27,15 +27,14 @@
 					<input type="checkbox" name="gender[]" value="0" checked>Female
 				</div>
 				<div class="form-group">
-					<input type="text" name="name" placeholder="George Washington">
+					<input id="name-search" type="text" name="name" placeholder="George Washington">
 				</div>
-				<input class="btn btn-primary" type="submit" value="Search">
 			</form>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
-			<table class=" table table-striped">
+			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>Rank</th>
@@ -72,3 +71,26 @@
 </div><!-- end of container -->
 
 <?php $this->load->view('partials/footer'); ?>
+
+<script>
+$(document).ready(function () {
+
+function get_table() {
+	$.post("/records/index_html/", $("#parameters").serialize(), function(res) {
+		$("table").html(res);
+	});
+}
+$('select, input').on("change", function() {
+	get_table();
+});
+$('input').on("keyup", function() {
+	get_table();
+});
+// $(document).on("keyup", "#name-search", function() {
+// 	get_table();
+// });
+
+
+
+});
+</script>
