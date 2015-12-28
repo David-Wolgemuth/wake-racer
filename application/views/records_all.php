@@ -5,6 +5,23 @@
 	<h1 class="page-header text-center">Records</h1>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
+			<form action="records/index" method="GET">
+				<div class="form-group">
+				<label>Distance</label>
+					<select  name="distance" class="form-control">
+						<option value="" selected>All Distances</option>
+						<option value="200m">200m</option>
+						<option value="500m">500m</option>
+						<option value="1000m">1000m</option>
+						<option value="5000m">5000m</option>
+					</select>
+				</div>
+				<input class="btn btn-primary" type="submit" value="Search">
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
 			<table class=" table table-striped">
 				<thead>
 					<tr>

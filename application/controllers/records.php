@@ -9,7 +9,8 @@ class Records extends CI_Controller
     }
     public function index()
     {
-        $records = $this->Record->get_all_records();
+        $request = $this->input->get();
+        $records = $this->Record->get_all_records($request);
         for ($i=0; $i < count($records); $i++) { 
             $records[$i]['record_time'] = $this->Record->expand_seconds($records[$i]['record_time']);
         }

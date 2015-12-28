@@ -2,14 +2,16 @@
 
 class Record extends CI_Model
 {
-    public function get_all_records()
+    public function get_all_records($request)
     {
         $query =   "SELECT records.*, name_first, name_last, gender, birthdate FROM records
                     JOIN users ON users.id=user_id
+                    WHERE (distance=? OR ?='')
                     ORDER BY records.created_at DESC;  ";
-        return $this->db->query($query)->result_array();
+        $distance = $request['distance'];
+        $values = array($distance, $distance);
+        return $this->db->query($query, $values)->result_array();
     }
-
     public function get_user_records()
     {
         $query = "SELECT * FROM records
