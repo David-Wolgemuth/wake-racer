@@ -4,14 +4,14 @@ class Record extends CI_Model
 {
     public function get_all_records()
     {
-        $query =   "SELECT records.*, name_first, name_last, gender, birthdate FROM records
+        $query =   "SELECT records.*, name_first, name_last, gender, TIMESTAMPDIFF(YEAR, birthdate, '2015-01-01') AS age FROM records
                     JOIN users ON users.id=user_id
                     ORDER BY records.created_at DESC;  ";
         return $this->db->query($query)->result_array();
     }
     public function get_all_records_with_request($request)
     {
-        $query =   "SELECT records.*, name_first, name_last, gender, birthdate FROM records
+        $query =   "SELECT records.*, name_first, name_last, gender, TIMESTAMPDIFF(YEAR, birthdate, '2015-01-01') AS age FROM records
                     JOIN users ON users.id=user_id
                     WHERE (distance=? OR ?='')
                     AND ? LIKE CONCAT('%', boat_type, '%')

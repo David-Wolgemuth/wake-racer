@@ -51,7 +51,7 @@
 						<tr>
 							<td><?php echo $key+1 ?></td>
 							<td><?= $value['name_first']. " " . $value['name_last'] ?></td>
-							<td><?= $value['birthdate'] ?></td>
+							<td><?= $value['age'] ?></td>
 							<td><?= $value['record_time']['formatted'] ?></td>
 							<td><?= $value['distance'] ?></td>
 							<td><?php if($value['gender']==0){
